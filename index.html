@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,19 +11,125 @@
     <title>Justin Choi</title>
 </head>
 <body>
+<span id="top"></span>
 <nav class="navbar bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Justin Choi</a>
     </div>
 </nav>
-<h2>Software Engineer</h2>
-<a>Portfolio</a>
-<a>Resume</a>
-<a>Dance</a>
-<a>Music</a>
-<a>About</a>
+<div class="link-container">
+    <a class="no-underline" href="#projects">Portfolio</a>
+    <a class="no-underline" href="./jschoiresume.pdf">Resume</a>
+    <a class="no-underline" href="#Music">Music</a>
+</div>
+<span id="projects"></span>
+<div class="projects">
+    <h1 style="font-size: 64px" ;>Projects</h1>
+    <div class="projects-container">
+        <div class="project-container">
+            <h1>Tool Depot</h1>
+            <p class="description">Full stack web application allowing users to find and rent out tools. It developed
+                from the ground up as part of a team. Main technologies utilized were MySQL, Java Spring, Hibernate,
+                Angular deployed on AWS EC2 instance. My role was backend and also I worked on the front end map
+                utilizing Google maps API. Optimized number of API calls through use of cache data structure.</p>
+            <img src="homepage.png" alt="Homepage Image">
+        </div>
+        <div class="project-container">
+            <h1>Orfeus</h1>
+            <p class="description">Senior project completed for my Computer Science and Engineering degree. Full stack
+                web application integrating a machine learning model called Jukebox developed by OpenAI allowing users
+                to upload an Main technologies utilized were MySQL, Flask backend, React and deployed AWS EC2, S3, and
+                Lambda functions. My role was backend but I worked on the front end playlist and library
+                functionality.</p>
+            <img src="searchpage.png" alt="Search Page Image">
+        </div>
+    </div>
+    <div class="icon-container">
+        <a href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+            </svg>
+        </a>
+        <a href="#Music">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </a>
+    </div>
+</div>
+<span id="Music"></span>
+<div class="music">
+    <h1 style="font-size: 64px" ;>Music</h1>
+    <div class="music-container">
+        <div class="video-container">
+            <h1>Chopin Waltz Op 64 No 2</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N3MnbU_mwrs?si=moaWkqk6atZLJd3g"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="icon-container">
+        <a href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-chevron-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+            </svg>
+        </a>
+    </div>
+</div>
+<div id="video-overlay" class="video-overlay" style="display: none;">
+    <div class="video-container">
+        <video id="video-player" controls>
+            <source src="/trimguitar.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="close-video" class="close-button">Close</button>
+    </div>
+</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/egg.js/1.0/egg.min.js"></script>
+<script>
+    var egg = new Egg();
+    egg
+        .addCode("4,2,3", function () {
+            // When "3" key is pressed, show the video overlay
+            $('#video-overlay').show();
+            var video = document.getElementById('video-player');
+            if (video) {
+                video.play();
+            }
+        })
+        .addHook(function () {
+            console.log("Hook called for: " + this.activeEgg.keys);
+            console.log(this.activeEgg.metadata);
+        })
+        .listen();
+
+    $(document).ready(function () {
+        // Close the video overlay when the close button is clicked and pause the video
+        $('#close-video').click(function () {
+            $('#video-overlay').hide();
+            // Pause the video
+            var video = document.getElementById('video-player');
+            if (video) {
+                video.pause();
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>

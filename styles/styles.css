@@ -1,16 +1,3 @@
-html {
-    background-color:#212529;
-}
-.h2 {
-    background-color: #212529;
-}
-nav {
-    background-color: #212529;
-    padding: 20px;
-    display: flex; /* Use flexbox layout */
-    justify-content: space-between; /* Push "Justin Choi" to the right */
-    align-items: center; /* Vertically center "Justin Choi" */
-}
 a {
     display: block; /* Make the <a> tag a block-level element */
     background-color:#212529;
@@ -21,4 +8,132 @@ a {
 }
 a:hover {
     box-shadow: inset 200px 0 0 0 #54b3d6;
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.description {
+    text-align: center;
+}
+.projects, .music h1 {
+    background-color:#212529;
+    color: white;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+html {
+    background-color:#212529;
+}
+.projects .icon-container {
+    text-align: right;
+    padding-right: 50px;
+     padding-bottom: 10px
+}
+
+.music .icon-container {
+    text-align: right;
+    padding-right: 50px;
+    padding-bottom: 300px
+}
+.projects-container {
+    background-color:#212529;
+    display: flex;
+}
+.project-container {
+    background-color: #212529;
+    padding: 10px 10px 10px 10px; /* Adjust padding as needed */
+}
+
+.music-container {
+    background-color:#212529;
+    display: flex;
+}
+.video-container {
+    background-color: #212529;
+    padding: 10px 10px 10px 10px; /* Adjust padding as needed */
+}
+img {
+    background-color:#212529;
+    height: auto;
+    width: 100%;
+}
+.link-container {
+    background-color:#212529;
+    padding: 100px 10px 600px 10px; /* Adjust padding as needed */
+}
+nav {
+    background-color: #212529;
+    padding: 20px;
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Push "Justin Choi" to the right */
+    align-items: center; /* Vertically center "Justin Choi" */
+}
+.no-underline {
+    text-decoration: none;
+}
+
+.projects {
+    color: white;
+    background-color: #212529;
+}
+.music {
+    color: white;
+    background-color: #212529;
+    padding-top: 200px;
+}
+
+
+.video-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+}
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Yellow color for the Portfolio anchor */
+.link-container a[href="#projects"] {
+    color: yellow !important;
+}
+
+/* Red color for the Resume anchor */
+.link-container a[href$="jschoiresume.pdf"] {
+    color: red !important;
+}
+
+/* Blue color for the Music anchor */
+.link-container a[href="#Music"] {
+    color: blue !important;
 }
