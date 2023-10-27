@@ -1,12 +1,12 @@
-a {
+.link-container a {
     display: block; /* Make the <a> tag a block-level element */
-    background-color:#212529;
+    background-color:transparent;
     font-size: 48px;
     padding: 10px; /* Add padding to create space between <a> tags */
     color: white !important;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
-a:hover {
+.link-container :hover {
     box-shadow: inset 200px 0 0 0 #54b3d6;
 }
 
@@ -21,7 +21,14 @@ a:hover {
 .description {
     text-align: center;
 }
-.projects, .music h1 {
+.projects h1 {
+    background-color:#212529;
+    color: white;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.music h1 {
     background-color:#212529;
     color: white;
     left: 0;
@@ -34,13 +41,16 @@ html {
 .projects .icon-container {
     text-align: right;
     padding-right: 50px;
-     padding-bottom: 10px
+    padding-bottom: 10px
 }
 
 .music .icon-container {
     text-align: right;
     padding-right: 50px;
     padding-bottom: 300px
+}
+.projects {
+    padding-top: 250px;
 }
 .projects-container {
     background-color:#212529;
@@ -61,12 +71,13 @@ html {
 }
 img {
     background-color:#212529;
-    height: auto;
     width: 100%;
 }
 .link-container {
-    background-color:#212529;
-    padding: 100px 10px 600px 10px; /* Adjust padding as needed */
+    position: relative;
+    padding: 100px 10px 100px 10px; /* Adjust padding as needed */
+    margin-bottom:300px;
+    z-index: 2;
 }
 nav {
     background-color: #212529;
@@ -74,6 +85,7 @@ nav {
     display: flex; /* Use flexbox layout */
     justify-content: space-between; /* Push "Justin Choi" to the right */
     align-items: center; /* Vertically center "Justin Choi" */
+    z-index: 2 !important;
 }
 .no-underline {
     text-decoration: none;
@@ -82,16 +94,15 @@ nav {
 .projects {
     color: white;
     background-color: #212529;
+    padding-bottom: 200px;
 }
 .music {
     color: white;
     background-color: #212529;
-    padding-top: 200px;
+    padding-bottom: 100px;
 }
 
-
 .video-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -136,4 +147,12 @@ video {
 /* Blue color for the Music anchor */
 .link-container a[href="#Music"] {
     color: blue !important;
+}
+.puppiness {
+    height: 100%;
+    position:absolute;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
