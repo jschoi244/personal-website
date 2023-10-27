@@ -76,7 +76,6 @@ img {
 .link-container {
     position: relative;
     padding: 100px 10px 100px 10px; /* Adjust padding as needed */
-    margin-bottom:300px;
     z-index: 2;
 }
 nav {
@@ -95,6 +94,7 @@ nav {
     color: white;
     background-color: #212529;
     padding-bottom: 200px;
+    padding-top: 500px;
 }
 .music {
     color: white;
